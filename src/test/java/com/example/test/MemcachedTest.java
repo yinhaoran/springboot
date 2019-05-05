@@ -76,13 +76,7 @@ public class MemcachedTest {
 
 	private class MemcacheOperateTask implements Callable<String> {
 
-		// private static MemcachedClient memcachedClient = null;
-
 		private static final int LOOPTIMES = 10;
-		// private static final Logger LOGGER =
-		// LoggerFactory.getLogger(MemcacheOperateTask.class);
-		// @Autowired
-		// private MemcachedClient memcachedClient;
 
 		@Override
 		public String call() throws Exception {

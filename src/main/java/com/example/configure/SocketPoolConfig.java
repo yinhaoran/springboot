@@ -1,6 +1,6 @@
 /**  
  * Project Name:spring-cloud-eureka-client  
- * File Name:SocketIOPoolConfig.java  
+ * File Name:SocketPoolConfig.java  
  * Package Name:com.example.configure 
  * Date:2019年4月26日上午11:49:22  
  * Copyright (c) 2019,  
@@ -13,7 +13,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
 /**
- * ClassName:SocketIOPoolConfig Date: 2019年4月26日 上午11:49:22
+ * ClassName:SocketPoolConfig Date: 2019年4月26日 上午11:49:22
  * 
  * @version
  * @author yin
@@ -22,7 +22,7 @@ import org.springframework.stereotype.Component;
  */
 @Component
 @ConfigurationProperties(prefix = "memcache")
-public class SocketIOPoolConfig {
+public class SocketPoolConfig {
 	private String[] servers;
 
 	private Integer[] weights;

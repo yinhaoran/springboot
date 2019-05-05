@@ -67,12 +67,12 @@ public class ReflectTest {
 		for (int i = 0; i < methods.length; i++) {
 			Method method = methods[i];
 			String methodName = method.getName();
-			LOGGER.debug("方法名为：{}", methodName);
+			LOGGER.info("方法名为：{}", methodName);
 			Class<?> returnType = method.getReturnType();
-			LOGGER.debug("返回类型为：{}", returnType.getName());
+			LOGGER.info("返回类型为：{}", returnType.getName());
 			Class<?>[] paramers = method.getParameterTypes();
 			for (Class<?> param : paramers) {
-				LOGGER.debug("参数类型为：{}", param.getName());
+				LOGGER.info("参数类型为：{}", param.getName());
 			}
 		}
 		Field[] fields = clazz.getFields();
@@ -81,7 +81,7 @@ public class ReflectTest {
 			Class<?> fieldType = field.getType();
 			String typeName = fieldType.getName();
 			String fieldName = field.getName();
-			LOGGER.debug("声明变量名称为：{}，类型为：{}", fieldName, typeName);
+			LOGGER.info("声明变量名称为：{}，类型为：{}", fieldName, typeName);
 		}
 	}
 
@@ -97,12 +97,12 @@ public class ReflectTest {
 		for (Method method : methods) {
 			UserCase useCase = method.getAnnotation(UserCase.class);
 			if (useCase != null) {
-				LOGGER.debug("Found Use Case: " + useCase);
+				LOGGER.info("Found Use Case: " + useCase);
 				useCases.remove(new Integer(useCase.id()));
 			}
 		}
 		for (int method : useCases) {
-			LOGGER.debug("Warning:Missing user case-" + method);
+			LOGGER.info("Warning:Missing user case-" + method);
 		}
 	}
 

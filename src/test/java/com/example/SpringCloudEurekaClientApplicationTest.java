@@ -16,7 +16,7 @@ import com.whalin.MemCached.MemCachedClient;
 
 /**
  * 
- * ClassName:SpringCloudEurekaClientApplicationTests 
+ * ClassName:SpringCloudEurekaClientApplicationTest 
  * Function: TODO ADD FUNCTION. 
  * Reason: TODO ADD REASON(可选).  
  * date: 2019年4月30日 上午10:41:28 
@@ -27,9 +27,9 @@ import com.whalin.MemCached.MemCachedClient;
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class SpringCloudEurekaClientApplicationTests {
+public class SpringCloudEurekaClientApplicationTest {
 
-	private static final Logger LOGGER = LoggerFactory.getLogger(SpringCloudEurekaClientApplicationTests.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(SpringCloudEurekaClientApplicationTest.class);
 
 	@Autowired
 	public MemCachedClient memCachedClient;

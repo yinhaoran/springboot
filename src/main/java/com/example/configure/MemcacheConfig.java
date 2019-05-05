@@ -35,7 +35,7 @@ import net.spy.memcached.MemcachedClient;
 @Component
 public class MemcacheConfig {
 	@Autowired
-	SocketIOPoolConfig sockIOPoolConfig;
+	SocketPoolConfig sockIOPoolConfig;
 
 	@Bean
 	public SockIOPool sockIOPool() {
