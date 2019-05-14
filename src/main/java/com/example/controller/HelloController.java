@@ -12,6 +12,7 @@ package com.example.controller;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -21,7 +22,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.example.pojo.User;
+import com.example.ws.MyCallback;
+import com.example.ws.XZWebServiceStub;
+import com.example.ws.XZWebServiceStub.GetSubsidyApplyByUserName;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -39,6 +44,9 @@ import io.swagger.annotations.ApiParam;
 @RestController
 @RequestMapping(value = "/user")
 public class HelloController {
+	
+	@Autowired
+	private XZWebServiceStub serviceStub;
 
 	@ApiOperation(value = "测试NGINX请求转发")
 	@RequestMapping(value = "/hi", method = RequestMethod.GET)
@@ -73,4 +81,16 @@ public class HelloController {
 	public User updateUser(@ApiParam(name = "user", value = "传入JSON格式", required = true) @RequestBody User user) {
 		return user;
 	}
+	
+	@ApiOperation(value = "测试Axis2 WebService", tags = { "测试Axis2生成WEBSERVCIE" })
+	@PostMapping(value = "/testAxis2")
+	@ResponseBody
+	public JSONObject testAxis() throws Exception {
+		GetSubsidyApplyByUserName applyByUserName = new GetSubsidyApplyByUserName();
+		applyByUserName.setUserName("林国伟");
+		serviceStub.startgetSubsidyApplyByUserName(applyByUserName, new MyCallback());
+		return null;
+	}
+	
+	
 }
